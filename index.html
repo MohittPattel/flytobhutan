@@ -1,52 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fly To Bhutan</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-        header { background-color: #333; color: white; padding: 1rem; text-align: center; }
-        nav { background-color: #444; padding: 0.5rem; }
-        nav a { color: white; margin: 0 1rem; text-decoration: none; }
-        nav a:hover { text-decoration: underline; }
-        footer { background-color: #333; color: white; text-align: center; padding: 1rem; position: fixed; bottom: 0; width: 100%; }
-    </style>
-<link rel="stylesheet" href="Home.css">
-
+    <meta name="description" content="Thoughtful journeys through the landscapes, culture, and quiet wonder of Bhutan.">
+    <title>Fly To Bhutan | Journeys Beyond the Ordinary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="Home.css">
 </head>
+
 <body>
-    <header>
-        <!--<div style="background: ><h1 style="color:yellow;">Fly<h1> To <h1 style="color:orangered;">Bhutan</h1></div>-->
-<h1>Fly To Bhutan</h1>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Fly To Bhutan home">
+            <span class="brand-mark">FTB</span>
+            <span>Fly To <strong>Bhutan</strong></span>
+        </a>
+        <nav aria-label="Main navigation">
+            <a class="active" href="index.html">Home</a>
+            <a href="about.html">Our story</a>
+            <a href="services.html">Experiences</a>
+            <a class="nav-cta" href="contact.html">Plan a journey <span aria-hidden="true">&#8594;</span></a>
+        </nav>
     </header>
-    <nav>
-        <a href="#">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-    </nav>
 
-<section id="home">
-    <div class="home-content">
-        <h2>Welcome to Bhutan</h2>
-        <p>
-            Land of the Thunder Dragon, the worlds only carbon-negative country with GNH       </p>
-    </div>
-</section>
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="eyebrow">Travel slowly. Feel deeply.</p>
+                <h1>Find your way to the <em>happy</em> kingdom.</h1>
+                <p class="hero-copy">From cloud-kissed passes to ancient monasteries, discover Bhutan through journeys
+                    shaped around you.</p>
+                <a class="button button-light" href="contact.html">Start planning <span
+                        aria-hidden="true">&#8594;</span></a>
+            </div>
+            <div class="hero-caption">
+                <span class="caption-line"></span>
+                <span>Paro Valley<br><small>Western Bhutan</small></span>
+            </div>
+            <a class="scroll-hint" href="#discover">Scroll to discover <span aria-hidden="true">&#8595;</span></a>
+        </section>
 
+        <section class="intro" id="discover">
+            <div class="section-label">01 / The invitation</div>
+            <div>
+                <h2>A little further from the ordinary.</h2>
+                <p>Bhutan asks you to slow down. We make it easy to answer. Our locally rooted trips pair thoughtful
+                    planning with the freedom to be surprised.</p>
+                <a class="text-link" href="about.html">Why travel with us <span aria-hidden="true">&#8594;</span></a>
+            </div>
+        </section>
 
-<!--    <section id="home">
-        <img src="Banner1.jpg" alt="Office Image" style="width:100%; max-width:800px;">
+        <section class="experiences">
+            <div class="section-heading">
+                <div class="section-label">02 / Go deeper</div>
+                <h2>Journeys worth remembering.</h2>
+            </div>
+            <div class="experience-grid">
+                <article class="experience-card card-culture">
+                    <span class="card-number">01</span>
+                    <div>
+                        <h3>Living culture</h3>
+                        <p>Temples, festivals, and the stories between them.</p>
+                    </div>
+                </article>
+                <article class="experience-card card-wild">
+                    <span class="card-number">02</span>
+                    <div>
+                        <h3>Wild horizons</h3>
+                        <p>Mountain trails, still valleys, and fresh air.</p>
+                    </div>
+                </article>
+                <article class="experience-card card-adventure">
+                    <span class="card-number">03</span>
+                    <div>
+                        <h3>Open roads</h3>
+                        <p>Take the scenic route. It is always the right one.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-        <h2>Welcome to TechSolutions</h2>
-        <p>We provide cutting-edge technology services to help your business thrive in the digital age. From software development to cybersecurity, we've got you covered.</p>
-    </section>-->
+        <section class="closing-cta">
+            <p class="eyebrow">Your Bhutan story starts here</p>
+            <h2>Ready to go somewhere<br><em>meaningful?</em></h2>
+            <a class="button button-dark" href="contact.html">Talk to our team <span
+                    aria-hidden="true">&#8594;</span></a>
+        </section>
+    </main>
 
-    <footer>
-        <p>&copy; 2026 FlyToBhutan. All rights reserved.</p>
+    <footer class="site-footer">
+        <span>&copy; 2026 FlyToBhutan</span>
+        <span>Paro &middot; Thimphu &middot; Punakha</span>
     </footer>
 </body>
+
 </html>
-
-
