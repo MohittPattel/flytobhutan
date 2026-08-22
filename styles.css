@@ -358,6 +358,51 @@ h2 span {
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
+.popular-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+.popular-grid .destination-card {
+  min-height: 430px;
+}
+.beyond {
+  background: var(--paper);
+}
+.beyond-grid {
+  grid-template-columns: repeat(5, 1fr);
+}
+.beyond-grid .destination-card {
+  min-height: 330px;
+}
+.beyond-grid .card-content {
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+}
+.beyond-grid .card-content h3 {
+  font-size: 28px;
+}
+.beyond-grid .card-content p {
+  font-size: 12px;
+}
+.route-attraction {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr auto;
+  gap: 30px;
+  align-items: center;
+  margin-top: 20px;
+  padding: 28px 32px;
+  border-left: 5px solid var(--orange);
+  background: var(--cream);
+}
+.route-attraction h3 {
+  font-size: 34px;
+  margin-top: 7px;
+}
+.route-attraction p {
+  color: var(--muted);
+  margin: 0;
+  max-width: 400px;
+}
 .destination-card {
   position: relative;
   min-height: 360px;
@@ -675,6 +720,43 @@ select {
 .plan-result.show {
   display: block;
 }
+.contact-direct {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+.contact-direct p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.contact-actions {
+  display: flex;
+  gap: 10px;
+}
+.contact-button {
+  flex: 1;
+  padding: 11px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.contact-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+.email-button {
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background: var(--white);
+}
+.whatsapp-button {
+  background: #168c4b;
+  color: var(--white);
+}
 
 .footer {
   background: #111;
@@ -797,6 +879,12 @@ select {
   .experience-grid {
     grid-template-columns: 1fr;
   }
+  .beyond-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .route-attraction {
+    grid-template-columns: 1fr;
+  }
   .destination-card.large {
     grid-row: auto;
     min-height: 380px;
@@ -804,11 +892,18 @@ select {
   .destination-card {
     min-height: 330px;
   }
+  .popular-grid .destination-card,
+  .beyond-grid .destination-card {
+    min-height: 380px;
+  }
   .experience-card p {
     min-height: auto;
   }
   .form-grid {
     grid-template-columns: 1fr;
+  }
+  .contact-actions {
+    flex-direction: column;
   }
   .footer-grid {
     grid-template-columns: 1fr 1fr;
