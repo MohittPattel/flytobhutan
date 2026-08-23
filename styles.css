@@ -133,8 +133,7 @@ select {
   inset: 0;
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.62)),
-    url("https://cdn.pixabay.com/photo/2017/08/28/20/33/tigers-nest-2691190_1280.jpg")
-      center/cover;
+    url("assets/tigers-nest-2691190_1280.jpg") center/cover;
 }
 .hero-overlay {
   position: absolute;
@@ -859,18 +858,31 @@ select {
     padding: 70px 0;
   }
   .hero {
-    min-height: 700px;
+    min-height: 0;
+    padding-bottom: 46px;
   }
   .hero-content {
-    padding-top: 215px;
+    padding-top: 170px;
   }
   h1 {
-    font-size: 55px;
+    font-size: clamp(38px, 12vw, 55px);
+  }
+  .hero-content p {
+    font-size: 16px;
+    margin: 20px 0;
+  }
+  .hero-actions .btn {
+    flex: 1 1 160px;
   }
   .hero-badge {
-    left: 14px;
-    right: auto;
-    bottom: 28px;
+    position: relative;
+    inset: auto;
+    width: min(calc(100% - 28px), var(--max));
+    margin: 26px auto 0;
+    padding: 16px 20px;
+  }
+  .hero-badge strong {
+    font-size: 30px;
   }
   .section-heading {
     display: block;
