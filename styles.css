@@ -978,6 +978,10 @@ select {
   .himalayan-image {
     max-height: 62vh;
   }
+  .himalayan-modal {
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto;
+  }
   .himalayan-content {
     padding: 18px 18px 22px;
   }
