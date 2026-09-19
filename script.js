@@ -111,13 +111,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!popup) return;
 
+  const hasSeenPopup = () => {
+    try {
+      return sessionStorage.getItem("himalayanPopupSeen") === "true";
+    } catch {
+      return false;
+    }
+  };
+
+  const markPopupAsSeen = () => {
+    try {
+      sessionStorage.setItem("himalayanPopupSeen", "true");
+    } catch {
+      // Continue showing the popup when storage is unavailable.
+    }
+  };
+
   function openHimalayanPopup() {
-    if (sessionStorage.getItem("himalayanPopupSeen")) return;
+    if (hasSeenPopup()) return;
 
     popup.classList.add("active");
     popup.setAttribute("aria-hidden", "false");
     document.body.classList.add("himalayan-popup-open");
-    sessionStorage.setItem("himalayanPopupSeen", "true");
+    markPopupAsSeen();
 
     setTimeout(function () {
       closeButton.focus();
