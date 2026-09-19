@@ -10,7 +10,30 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
   link.addEventListener("click", () => {
     nav.classList.remove("open");
     menuToggle?.setAttribute("aria-expanded", "false");
+    document.querySelector(".explore-menu")?.classList.remove("is-open");
   });
+});
+
+const exploreMenu = document.querySelector(".explore-menu");
+const exploreTrigger = document.getElementById("startExploring");
+
+exploreTrigger?.addEventListener("click", () => {
+  const open = exploreMenu.classList.toggle("is-open");
+  exploreTrigger.setAttribute("aria-expanded", String(open));
+});
+
+document.addEventListener("click", (event) => {
+  if (exploreMenu && !exploreMenu.contains(event.target)) {
+    exploreMenu.classList.remove("is-open");
+    exploreTrigger?.setAttribute("aria-expanded", "false");
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    exploreMenu?.classList.remove("is-open");
+    exploreTrigger?.setAttribute("aria-expanded", "false");
+  }
 });
 
 const form = document.getElementById("tripForm");
@@ -76,4 +99,60 @@ updateBackToTop();
 
 backToTop?.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const popup = document.getElementById("himalayanPopup");
+  const closeButton = document.getElementById("himalayanClose");
+  const overlay = document.querySelector(".himalayan-overlay");
+  const startExploring = document.getElementById("startExploring");
+  const exploreMenu = document.querySelector(".explore-menu");
+  const himalayanOption = document.getElementById("himalayanOption");
+
+  if (!popup) return;
+
+  function openHimalayanPopup() {
+    if (sessionStorage.getItem("himalayanPopupSeen")) return;
+
+    popup.classList.add("active");
+    popup.setAttribute("aria-hidden", "false");
+    document.body.classList.add("himalayan-popup-open");
+    sessionStorage.setItem("himalayanPopupSeen", "true");
+
+    setTimeout(function () {
+      closeButton.focus();
+    }, 300);
+  }
+
+  function closeHimalayanPopup() {
+    popup.classList.remove("active");
+    popup.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("himalayan-popup-open");
+  }
+
+  closeButton.addEventListener("click", function () {
+    closeHimalayanPopup();
+    exploreMenu?.classList.add("is-open");
+    startExploring?.setAttribute("aria-expanded", "true");
+    startExploring?.classList.add("is-highlighted");
+
+    setTimeout(function () {
+      himalayanOption?.focus();
+    }, 200);
+
+    setTimeout(function () {
+      startExploring?.classList.remove("is-highlighted");
+    }, 900);
+  });
+  overlay.addEventListener("click", closeHimalayanPopup);
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && popup.classList.contains("active")) {
+      closeHimalayanPopup();
+    }
+  });
+
+  setTimeout(function () {
+    openHimalayanPopup();
+  }, 1200);
 });

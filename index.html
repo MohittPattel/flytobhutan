@@ -38,9 +38,17 @@
         <a href="#guides">Guides</a>
         <a href="#festivals">Festivals</a>
         <a href="#plan">Plan a Trip</a>
+        <div class="explore-menu">
+          <button class="nav-cta explore-trigger" id="startExploring" type="button" aria-expanded="false"
+            aria-haspopup="true">Start Exploring <span aria-hidden="true">⌄</span></button>
+          <div class="explore-options" role="menu">
+            <a href="#plan" role="menuitem">Fly To Bhutan</a>
+            <a id="himalayanOption" href="https://www.instagram.com/thehimalayancollection/" target="_blank"
+              rel="noopener noreferrer"
+              role="menuitem">The Himalayan Collection</a>
+          </div>
+        </div>
       </div>
-
-      <a class="nav-cta" href="#plan">Start Exploring</a>
     </nav>
   </header>
 
@@ -435,6 +443,23 @@
   <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top" title="Back to top">
     <span aria-hidden="true">↑</span>
   </button>
+
+  <!-- Himalayan Collection Promotional Popup -->
+  <div id="himalayanPopup" class="himalayan-popup" aria-hidden="true">
+    <div class="himalayan-overlay" data-himalayan-close></div>
+    <div class="himalayan-modal" role="dialog" aria-modal="true" aria-labelledby="himalayanPopupTitle">
+      <button type="button" class="himalayan-close" id="himalayanClose" aria-label="Close popup">&times;</button>
+      <div class="himalayan-image-wrapper">
+        <img src="assets/thehimalayancollection.jpeg" alt="Ema datshi, inspired by Himalayan flavours" class="himalayan-image">
+      </div>
+      <div class="himalayan-content">
+        <h2 id="himalayanPopupTitle">Discover The Himalayan Collection</h2>
+        <p>Explore a curated collection inspired by the beauty, culture and heritage of the Himalayas.</p>
+        <a href="https://www.instagram.com/thehimalayancollection/" target="_blank" rel="noopener noreferrer"
+          class="himalayan-button" id="himalayanExplore">Explore Our Collection <span>↗</span></a>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
